@@ -84,6 +84,32 @@ function renderizarMensajes(mensaje, yo) {
 
 }
 
+function enviarNotificacion() {
+
+    if (!("Notification" in window)) { //Verificar si el navegador soporta notificaciones
+
+        console.log("El navegador no cuenta con soporte para Notificacione");
+
+    } else if (Notification.permission === "granted") { //Lanzar la notificacion si el permiso de notificaciones esta garantizado o activado
+
+        var notificacion = new Notification("Tienes un Nuevo Mensaje");
+
+    } else if (Notification.permission !== "denied") { //Solicitar permiso de notificaciones si no es ha concedido aun
+
+        Notification.requestPermission(function(permission) {
+
+            if (Notification.permission === "granted") {
+
+                var notificacion = new Notification("Notificaciones Activadas");
+
+            }
+
+        });
+
+    }
+
+}
+
 //Scroll automatico para mostrar el ultimo mensaje
 function scrollBottom() {
 
