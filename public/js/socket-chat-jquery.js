@@ -8,6 +8,16 @@ var divUsuarios = $('#divUsuarios');
 var formEnviar = $('#formEnviar');
 var txtMensaje = $('#txtMensaje');
 var divChatbox = $('#divChatbox');
+var SalaChat = $('#SalaChat');
+
+//Funcion para renderizar la sala de chat
+function renderizarSala() {
+    var html = '';
+
+    html += '<h3 class="box-title">Sala de chat <small>' + params.get('sala') + '</small></h3>';
+
+    SalaChat.html(html);
+}
 
 //Funciones para renderizar ususarios
 function renderizarUsuarios(personas) {
