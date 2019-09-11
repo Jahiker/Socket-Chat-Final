@@ -88,11 +88,12 @@ function enviarNotificacion() {
 
     if (!("Notification" in window)) { //Verificar si el navegador soporta notificaciones
 
-        console.log("El navegador no cuenta con soporte para Notificacione");
+        console.log("El navegador no cuenta con soporte para Notificaciones");
 
     } else if (Notification.permission === "granted") { //Lanzar la notificacion si el permiso de notificaciones esta garantizado o activado
 
         var notificacion = new Notification("Tienes un Nuevo Mensaje");
+        console.log(Notification);
 
     } else if (Notification.permission !== "denied") { //Solicitar permiso de notificaciones si no es ha concedido aun
 
